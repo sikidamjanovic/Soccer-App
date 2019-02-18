@@ -21,7 +21,7 @@ class Match extends Component {
             'Content-Type': 'application/json',
             'X-Auth-Token': '363f304ebcc94151bdad56ea2950eb87' 
         }
-        axios.get('http://api.football-data.org/v2/matches/'+this.props.match.params.id, {headers: header})
+        axios.get('https://api.football-data.org/v2/matches/'+this.props.match.params.id, {headers: header})
         .then(function(response){
             self.setState({data: response.data})
         },function(respones) {
