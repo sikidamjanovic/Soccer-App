@@ -9,10 +9,6 @@ class App extends Component {
         this.state = {
         }
     }
-
-    render() {
-        <div></div>
-    }
 }
 
 export default App;
