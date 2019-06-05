@@ -37,7 +37,7 @@ class Chart extends Component{
                          this.state.scorers[9].player.name],
                 datasets:[
                     {
-                        label: "Goals",
+                        label: "Goals this season",
                         data: [
                             this.state.scorers[0].numberOfGoals,
                             this.state.scorers[1].numberOfGoals,

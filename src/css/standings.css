@@ -1,3 +1,19 @@
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .MuiTableCell-body-37{
+        font-size: 0.7em !important;
+    }
+    .table td, .table th{
+        padding: 0.1rem !important;
+    }
+    .table td{
+        padding-top: 1rem !important;
+    }
+    .table th{
+        font-size: 0.5em !important;
+    }
+}
+
 .standings{
     background-color: #f3f3f3;
     min-height: 100vh;

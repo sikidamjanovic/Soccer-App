@@ -6,12 +6,20 @@
     background: linear-gradient(to bottom, rgb(14, 190, 123, 0.75), rgb(40, 202, 140, 0.6));
     text-align: center;
     font-family: 'Raleway', sans-serif;
-    margin-top: 5%;
-    padding-top: 2%;
-    padding-bottom: 2%;
     color: rgb(255, 255, 255); 
+    padding: 50px;
+    margin-top: 5%;
+    height: 150px;
 }
 
 #footer a{
     color: rgb(255, 255, 255);
+    border: 2px solid white;
+    padding: 8px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+#footer p{
+    margin-top: 15px;
 }

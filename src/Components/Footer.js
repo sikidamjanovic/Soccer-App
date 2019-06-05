@@ -7,8 +7,10 @@ class Footer extends Component {
         return (
             <div>
                 <footer id="footer">
-                    <p className="footer-text"> Repo: <a href="https://github.com/sikidamjanovic/Kino-Movie">kino@github.com</a>.</p>
-                    <p>&copy; 2019 Sinisa Damjanovic</p>
+                    <div>
+                        <a href="https://github.com/sikidamjanovic/Soccer-App">Github Repo</a>
+                        <p>&copy; 2019 Sinisa Damjanovic</p>
+                    </div>                    
                 </footer>
             </div>
         )

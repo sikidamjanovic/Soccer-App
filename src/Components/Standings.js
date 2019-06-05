@@ -99,7 +99,7 @@ class Standings extends Component {
         if(this.state.scorers.hasOwnProperty('scorers')){
             return(
                 <Paper>
-                <Table>
+                <Table className="table">
                 <TableHead>
                 <TableRow>
                     <TableCell align="center">Position</TableCell>
@@ -143,7 +143,7 @@ class Standings extends Component {
                 </div>
                 <Container>
                     <Row>
-                        <Col sm={{ size: 5, offset: 1}} xs={{ size: 12 }}>
+                        <Col sm={{ size: 12, offset: 0}} xs={{ size: 12 }}>
                             {this.loadLeague()}
                             <select value={this.state.competition} onChange={this.handleSelect}>
                             <option value="2021">Premier League</option>
@@ -155,12 +155,12 @@ class Standings extends Component {
                         </Col>
                     </Row>
                     <Row className="chartContainer">
-                        <Col sm={{ size: 10, offset: 1}}>
+                        <Col sm={{ size: 12, offset: 0}}>
                             {this.loadChart()}
                         </Col>
                     </Row>
                     <Row>
-                        <Col sm={{ size: 10, offset: 1}}>
+                        <Col sm={{ size: 12, offset: 0}}>
                             {this.loadTable()}
                         </Col>
                     </Row>
