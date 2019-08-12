@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {HorizontalBar, Line, Pie} from 'react-chartjs-2'
+import {HorizontalBar} from 'react-chartjs-2'
 
 class Chart extends Component{
     constructor(props){
@@ -20,73 +20,70 @@ class Chart extends Component{
         }
     }
 
-    render(){
-        let chart = []
+    renderChart(){
+
+        let scorers = this.state.scorers
         let max = this.props.maxY
-        if(this.state.scorers.length > 0){
+        let dGreen = 'rgb(14, 190, 123)'
+        let mGreen = 'rgb(14, 190, 123, 0.5)'
+        let lGreen = 'rgb(14, 190, 123, 0.25)'
+
+        if(scorers.length > 0){
             const chartData = {
-                labels: [this.state.scorers[0].player.name,
-                         this.state.scorers[1].player.name, 
-                         this.state.scorers[2].player.name,
-                         this.state.scorers[3].player.name,
-                         this.state.scorers[4].player.name,
-                         this.state.scorers[5].player.name,
-                         this.state.scorers[6].player.name, 
-                         this.state.scorers[7].player.name,
-                         this.state.scorers[8].player.name,
-                         this.state.scorers[9].player.name],
-                datasets:[
-                    {
-                        label: "Goals this season",
-                        data: [
-                            this.state.scorers[0].numberOfGoals,
-                            this.state.scorers[1].numberOfGoals,
-                            this.state.scorers[2].numberOfGoals,
-                            this.state.scorers[3].numberOfGoals,
-                            this.state.scorers[4].numberOfGoals,
-                            this.state.scorers[5].numberOfGoals,
-                            this.state.scorers[6].numberOfGoals,
-                            this.state.scorers[7].numberOfGoals,
-                            this.state.scorers[8].numberOfGoals,
-                            this.state.scorers[9].numberOfGoals
-                        ],
-                        backgroundColor:[
-                            'rgb(14, 190, 123)',
-                            'rgb(14, 190, 123, 0.5)',
-                            'rgb(14, 190, 123, 0.5)',
-                            'rgb(14, 190, 123, 0.5)',
-                            'rgb(14, 190, 123, 0.5)',
-                            'rgb(14, 190, 123, 0.25)',
-                            'rgb(14, 190, 123, 0.25)',
-                            'rgb(14, 190, 123, 0.25)',
-                            'rgb(14, 190, 123, 0.25)',
-                            'rgb(14, 190, 123, 0.25)',
-                        ]
-                    }
-                ]
+                labels: [
+                    scorers[0].player.name, scorers[1].player.name,
+                    scorers[2].player.name, scorers[3].player.name,
+                    scorers[4].player.name, scorers[5].player.name,
+                    scorers[6].player.name, scorers[7].player.name,
+                    scorers[8].player.name, scorers[9].player.name
+                ],
+                datasets:[{
+                    label: "Goals this season",
+                    data: [
+                        scorers[0].numberOfGoals, scorers[1].numberOfGoals,
+                        scorers[2].numberOfGoals, scorers[3].numberOfGoals,
+                        scorers[4].numberOfGoals, scorers[5].numberOfGoals,
+                        scorers[6].numberOfGoals, scorers[7].numberOfGoals,
+                        scorers[8].numberOfGoals, scorers[9].numberOfGoals
+                    ],
+                    backgroundColor:[
+                        // Dark green for top scorer
+                        dGreen, 
+                        // Medium green for contenders
+                        mGreen, mGreen, 
+                        mGreen, mGreen, 
+                        // Light green for bottom half of list
+                        lGreen, lGreen,
+                        lGreen, lGreen, lGreen
+                    ]
+                }]
             }
-            chart = <HorizontalBar
-                        data={chartData}
-                        width={100}
-                        height={300}
-                        options={{
-                            maintainAspectRatio: false,
-                            scales: {
-                                xAxes: [{
-                                ticks: {
-                                    max: max,
-                                    min: 8,
-                                    stepSize: 2
-                                }
-                                }]
-                            },
-                        }}
-                    />
+            return(
+                <HorizontalBar
+                data={chartData}
+                width={100}
+                height={300}
+                options={{
+                    maintainAspectRatio: false,
+                    scales: {
+                        xAxes: [{
+                            ticks: {
+                                max: max,
+                                min: 0,
+                                stepSize: 2
+                            }
+                        }]
+                    },
+                }}
+                />
+            )
         }
-        
+    }
+
+    render(){        
         return (
             <div>
-                {chart}
+                {this.renderChart()}
             </div>
         )
     }

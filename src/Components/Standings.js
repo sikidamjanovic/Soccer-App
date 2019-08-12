@@ -116,7 +116,7 @@ class Standings extends Component {
                     <TableRow key={row.id}>
                         <TableCell align="center">{this.state.standings[row].position}</TableCell>
                         <TableCell align="left">
-                            <img className="crest" alt="crest" src={this.state.standings[row].team.crestUrl}></img>
+                            <img className="crest" alt="" src={this.state.standings[row].team.crestUrl}></img>
                             {this.state.standings[row].team.name}
                         </TableCell>
                         <TableCell align="center">{this.state.standings[row].won}</TableCell>
